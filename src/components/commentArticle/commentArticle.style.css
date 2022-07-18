@@ -1,0 +1,19 @@
+.article {
+  width: 500px;
+  margin: 25px auto;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 15px 15px 0;
+}
+
+.article h2 {
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+.article p {
+  text-align: start;
+}
+.article h4 {
+  margin-top: 15px;
+  text-align: end;
+}
