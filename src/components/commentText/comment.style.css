@@ -1,3 +1,5 @@
+/* Comment Form */
+
 .commentsForm {
   display: flex;
   justify-content: center;
@@ -38,4 +40,28 @@
 
 .commentsForm button:hover {
   background-color: rgb(170, 170, 170);
+}
+
+/* Comment each */
+
+.commentStyle {
+  width: 500px;
+  margin: 5px auto;
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.commentStyle--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.commentStyle--top h4 {
+  font-weight: normal;
+}
+
+.commentStyle p {
+  text-align: start;
 }
