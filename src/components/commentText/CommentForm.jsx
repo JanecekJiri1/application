@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "./comment.style.css";
+import CommentMap from "./CommentMap";
 
 const COMMENTS = [];
 
@@ -30,7 +31,6 @@ const CommentForm = (props) => {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-
         <button>add comment </button>
       </form>
 
@@ -43,6 +43,7 @@ const CommentForm = (props) => {
           <p>{a.comment}</p>
         </div>
       ))}
+      <CommentMap />
     </div>
   );
 };
