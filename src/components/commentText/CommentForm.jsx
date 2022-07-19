@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import "./comment.style.css";
 import CommentMap from "./CommentMap";
+// *********************************
+import articleCommentsText from "./articleCommentsText";
 
 const COMMENTS = [];
 

@@ -3,16 +3,16 @@ import articleCommentsText from "./articleCommentsText";
 import "./comment.style.css";
 
 function CommentMap(props) {
-  const [addCommenta, setAddComenta] = useState(document.__comments);
+  const [addCommenta, setAddCommenta] = useState(document.__comments);
+  const [show, setShow] = useState(true);
 
   const loadComment = addCommenta.map((com) => {
-    const myDate = new Date(com.date);
-    const dateTime = `${myDate.toLocaleString("cs-CZ")} `;
+    const myDate = new Date(com.date).toLocaleString("cs-CZ", { timeZone: "Africa/Abidjan" });
 
     return (
       <div className="commentStyle" key={com.coment}>
         <div className="commentStyle--top">
-          <h3 className="author"> {com.author} </h3> <h4 className="author"> {dateTime}</h4>
+          <h3 className="author"> {com.author} </h3> <h4 className="author"> {myDate}</h4>
         </div>
         <p> {com.text}</p>
       </div>
@@ -21,16 +21,17 @@ function CommentMap(props) {
 
   const handleClick = () => {
     let newCom = document.__moreComments;
+    let comarr = addCommenta.concat(newCom);
+    setAddCommenta(comarr);
 
-    let comarr = addCommenta.concat(newCom[0]);
-
-    setAddComenta(comarr);
+    setShow(false);
   };
 
   return (
     <div className="container">
       {loadComment}
-      <button onClick={handleClick}>Show more</button>
+
+      {show ? <button onClick={handleClick}>Show more</button> : null}
     </div>
   );
 }
