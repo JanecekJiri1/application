@@ -3,11 +3,17 @@ import articleCommentsText from "./articleCommentsText";
 import "./comment.style.css";
 
 function CommentMap(props) {
-  const [addCommenta, setAddCommenta] = useState(document.__comments);
+  const [addComment, setAddComment] = useState(document.__comments);
   const [show, setShow] = useState(true);
 
-  const loadComment = addCommenta.map((com) => {
+  const loadComment = addComment.map((com) => {
     const myDate = new Date(com.date).toLocaleString("cs-CZ", { timeZone: "Africa/Abidjan" });
+
+    const newArr = addComment.sort(function (a, b) {
+      let c = new Date(a.date);
+      let d = new Date(b.date);
+      return d - c;
+    });
 
     return (
       <div className="commentStyle" key={com.coment}>
@@ -21,8 +27,8 @@ function CommentMap(props) {
 
   const handleClick = () => {
     let newCom = document.__moreComments;
-    let comarr = addCommenta.concat(newCom);
-    setAddCommenta(comarr);
+    let comarr = addComment.concat(newCom);
+    setAddComment(comarr);
 
     setShow(false);
   };
