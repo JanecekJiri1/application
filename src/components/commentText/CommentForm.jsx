@@ -24,13 +24,7 @@ const CommentForm = (props) => {
     <div>
       <form className="commentsForm" onSubmit={handleSubmit}>
         <input type="text" name="name" value={name} placeholder="Your name" onChange={(e) => setName(e.target.value)} />
-        <textarea
-          type="text"
-          placeholder="add comment free to write how is "
-          name="sendText"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
+        <textarea type="text" placeholder="add your comment" name="sendText" value={comment} onChange={(e) => setComment(e.target.value)} />
         <button>add comment </button>
       </form>
 

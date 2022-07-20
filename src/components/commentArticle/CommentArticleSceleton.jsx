@@ -3,7 +3,7 @@ import React from "react";
 import "./commentArticle.style.css";
 
 function CommentArticleSceleton(props) {
-  const myDate = new Date(props.date).toLocaleString("cs-CZ", { timeZone: "Africa/Abidjan" });
+  const myDate = new Date(props.date).toLocaleString("cs-CZ", { timeZone: "Europe/Prague" });
 
   return (
     <div className="article">
